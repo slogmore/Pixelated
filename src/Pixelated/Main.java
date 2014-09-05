@@ -2,18 +2,28 @@ package Pixelated;
 
 import processing.core.*;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Main.
+ */
 public class Main extends PApplet { 
 
+	/* (non-Javadoc)
+	 * @see processing.core.PApplet#setup()
+	 */
 	public void setup() {
 		size(700,800);
 		background(255);
 		
-		//Uncomment one at a time see examples
+		//Uncomment one at a time to see examples
 		//pixelatedRawTest();
 		//pixelatedImageTest();
 		//pixelatedTextTest();
 	}	
 	
+	/**
+	 * Pixelated raw test.
+	 */
 	public void pixelatedRawTest() {
 		//Set up the graphic - unpixelated
 		Pixelated pixelated= new Pixelated(this, 255, 255);
@@ -31,6 +41,9 @@ public class Main extends PApplet {
 		image(pixelated.getPGraphic(), 0, 255);
 	}
 			
+	/**
+	 * Pixelated image test.
+	 */
 	public void pixelatedImageTest() {
 		//Unpixelated
 		PixelatedImage pixelatedImage = new PixelatedImage(this, loadImage("test.bmp"));
@@ -45,6 +58,9 @@ public class Main extends PApplet {
 		image(pixelatedImage.getPGraphic(), 0, pixelatedImage.getPixelHeight());
 	}
 	
+	/**
+	 * Pixelated text test.
+	 */
 	public void pixelatedTextTest() {
 		//Unpixelated
 		PFont testFont = createFont("Times New Roman", 100);
@@ -57,7 +73,7 @@ public class Main extends PApplet {
 		image(pixelatedText.getPGraphic(), 200, 0);
 		
 		pixelatedText = new PixelatedText(this, testFont, color(200, 150, 0), "Here");				
-		pixelatedText.setResolution(6);
+		pixelatedText.setResolution(8);
 		image(pixelatedText.getPGraphic(), 0, 100);
 		
 		//Pixel tolerance example - see docs for detail
@@ -67,6 +83,11 @@ public class Main extends PApplet {
 		image(pixelatedText.getPGraphic(), 200, 100);
 	}
 		
+	/**
+	 * The main method.
+	 *
+	 * @param args the arguments
+	 */
 	public static void main(String args[]) {
 		PApplet.main(new String[] { "--present", "Main" });
 	}  
